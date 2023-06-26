@@ -1,0 +1,23 @@
+@public
+collection lassie {
+  id: string;
+  retrieval_id: string;
+  instance_id: string;
+  storage_provider_id: string;
+  time_to_first_byte_ms: number;
+  bandwidth_bytes_sec: number;
+  success: boolean;
+  start_time: string;
+  end_time: string;
+  constructor (id: string, retrieval_id: string, instance_id: string, storage_provider_id: string, time_to_first_byte_ms: number, bandwidth_bytes_sec: number, success: boolean, start_time: string, end_time: string) {
+    this.id = id;
+    this.retrieval_id = retrieval_id;
+    this.instance_id = instance_id;
+    this.storage_provider_id = storage_provider_id;
+    this.time_to_first_byte_ms = time_to_first_byte_ms;
+    this.bandwidth_bytes_sec = bandwidth_bytes_sec;
+    this.success = success;
+    this.start_time = start_time;
+    this.end_time = end_time;
+  }
+}
