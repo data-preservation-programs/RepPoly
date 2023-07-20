@@ -1,4 +1,4 @@
-@public
+@read
 collection kentik {
   id: string;
   date: string;

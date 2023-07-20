@@ -1,8 +1,7 @@
 // Auto-generated, do not modify
-import {ObjectId} from "mongodb";
 export interface filfox {
-  _id: ObjectId;
-  miner: string;
+  id: string;
+  provider: string;
   epoch: number;
   rawBytePower: string;
   qualityAdjPower: string;
@@ -10,4 +9,3 @@ export interface filfox {
   weightedBlocksMined: number;
   totalRewards: string;
 }
-export type filfox_poly = [string, string, number, string, string, number, number, string];

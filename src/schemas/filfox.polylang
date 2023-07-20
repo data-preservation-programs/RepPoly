@@ -1,16 +1,16 @@
-@public
+@read
 collection filfox {
   id: string;
-  miner: string;
+  provider: string;
   epoch: number;
   rawBytePower: string;
   qualityAdjPower: string;
   blocksMined: number;
   weightedBlocksMined: number;
   totalRewards: string;
-  constructor (id: string, miner: string, epoch: number, rawBytePower: string, qualityAdjPower: string, blocksMined: number, weightedBlocksMined: number, totalRewards: string) {
+  constructor (id: string, provider: string, epoch: number, rawBytePower: string, qualityAdjPower: string, blocksMined: number, weightedBlocksMined: number, totalRewards: string) {
     this.id = id;
-    this.miner = miner;
+    this.provider = provider;
     this.epoch = epoch;
     this.rawBytePower = rawBytePower;
     this.qualityAdjPower = qualityAdjPower;

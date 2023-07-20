@@ -1,0 +1,25 @@
+@read
+collection filscan {
+  id: string;
+  balance: string;
+  epoch: number;
+  fault_sector_count: number;
+  active_sector_count: number;
+  live_sector_count: number;
+  recover_sector_count: number;
+  terminated_sector_count: number;
+  multi_address: string;
+  provider: string;
+  constructor (id: string, balance: string, epoch: number, fault_sector_count: number, active_sector_count: number, live_sector_count: number, recover_sector_count: number, terminated_sector_count: number, multi_address: string, provider: string) {
+    this.id = id;
+    this.balance = balance;
+    this.epoch = epoch;
+    this.fault_sector_count = fault_sector_count;
+    this.active_sector_count = active_sector_count;
+    this.live_sector_count = live_sector_count;
+    this.recover_sector_count = recover_sector_count;
+    this.terminated_sector_count = terminated_sector_count;
+    this.multi_address = multi_address;
+    this.provider = provider;
+  }
+}

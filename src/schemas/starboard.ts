@@ -1,7 +1,6 @@
 // Auto-generated, do not modify
-import {ObjectId} from "mongodb";
 export interface starboard {
-  _id: ObjectId;
+  id: string;
   stat_date: string;
   onboarding_at: string;
   sector_size: number;
@@ -19,6 +18,5 @@ export interface starboard {
   blocks_mined: number;
   win_count: number;
   rewards: number;
-  provider_id: string;
+  provider: string;
 }
-export type starboard_poly = [string, string, string, number, number, number, number, number, number, number, string, string, string, string, string, number, number, number, string];

@@ -1,0 +1,27 @@
+@read
+collection protocol_labs_retrieval_bot {
+  id: string;
+  provider: string;
+  date: string;
+  http_retrievals: number;
+  http_retrieval_success: number;
+  graphsync_retrievals: number;
+  graphsync_retrieval_success: number;
+  bitswap_retrievals: number;
+  bitswap_retrieval_success: number;
+  avg_ttfb_ms: number;
+  avg_speed_bps: number;
+  constructor (id: string, provider: string, date: string, http_retrievals: number, http_retrieval_success: number, graphsync_retrievals: number, graphsync_retrieval_success: number, bitswap_retrievals: number, bitswap_retrieval_success: number, avg_ttfb_ms: number, avg_speed_bps: number) {
+    this.id = id;
+    this.provider = provider;
+    this.date = date;
+    this.http_retrievals = http_retrievals;
+    this.http_retrieval_success = http_retrieval_success;
+    this.graphsync_retrievals = graphsync_retrievals;
+    this.graphsync_retrieval_success = graphsync_retrieval_success;
+    this.bitswap_retrievals = bitswap_retrievals;
+    this.bitswap_retrieval_success = bitswap_retrieval_success;
+    this.avg_ttfb_ms = avg_ttfb_ms;
+    this.avg_speed_bps = avg_speed_bps;
+  }
+}

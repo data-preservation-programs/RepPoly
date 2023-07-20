@@ -1,16 +1,16 @@
-@public
+@read
 collection filrep {
   id: string;
-  miner: string;
+  provider: string;
   reachability: string;
   price: string;
   verifiedPrice: string;
   recentDeals: number;
   rank: number;
   __v: number;
-  constructor (id: string, miner: string, reachability: string, price: string, verifiedPrice: string, recentDeals: number, rank: number, __v: number) {
+  constructor (id: string, provider: string, reachability: string, price: string, verifiedPrice: string, recentDeals: number, rank: number, __v: number) {
     this.id = id;
-    this.miner = miner;
+    this.provider = provider;
     this.reachability = reachability;
     this.price = price;
     this.verifiedPrice = verifiedPrice;

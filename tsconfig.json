@@ -99,8 +99,8 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "*.ts",
-    "schemas/**/*.ts"
+    "src/**/*.ts",
+    "src/schemas/**/*.ts"
   ],
   "exclude": [
     "node_modules"

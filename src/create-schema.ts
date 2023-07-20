@@ -11,12 +11,12 @@ const db = new Polybase({
       sig: ethPersonalSign(process.env.PRIVATE_KEY!, data)
     }
   },
-  defaultNamespace: 'reputation-wg-test'
+  defaultNamespace: 'pk/' + process.env.PUBLIC_KEY,
 })
 
-const entries = fs.readdirSync('./schemas').filter((file) => path.extname(file) === '.polylang')
+const entries = fs.readdirSync('./src/schemas').filter((file) => path.extname(file) === '.polylang')
 for (const entry of entries) {
-  const content = fs.readFileSync('./schemas/' + entry, 'utf8')
+  const content = fs.readFileSync('./src/schemas/' + entry, 'utf8')
   const response = await db.applySchema(content)
   console.log(response)
 }

@@ -1,19 +1,19 @@
-@public
-collection lassie {
+@read
+collection lassie_bedrock {
   id: string;
   retrieval_id: string;
   instance_id: string;
-  storage_provider_id: string;
+  provider: string;
   time_to_first_byte_ms: number;
   bandwidth_bytes_sec: number;
   success: boolean;
   start_time: string;
   end_time: string;
-  constructor (id: string, retrieval_id: string, instance_id: string, storage_provider_id: string, time_to_first_byte_ms: number, bandwidth_bytes_sec: number, success: boolean, start_time: string, end_time: string) {
+  constructor (id: string, retrieval_id: string, instance_id: string, provider: string, time_to_first_byte_ms: number, bandwidth_bytes_sec: number, success: boolean, start_time: string, end_time: string) {
     this.id = id;
     this.retrieval_id = retrieval_id;
     this.instance_id = instance_id;
-    this.storage_provider_id = storage_provider_id;
+    this.provider = provider;
     this.time_to_first_byte_ms = time_to_first_byte_ms;
     this.bandwidth_bytes_sec = bandwidth_bytes_sec;
     this.success = success;
