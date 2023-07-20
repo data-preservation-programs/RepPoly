@@ -12,7 +12,7 @@ export const CollectionNames: CollectionName[] = [
     'filfox',
     'filrep',
     'filscan',
-    'gravity_assist_retrieval_bot',
+    //'gravity_assist_retrieval_bot',
     'kentik',
     'lassie_bedrock',
     'protocol_labs_retrieval_bot',
@@ -39,11 +39,13 @@ export const collections: Collection[] = [
         polybase: 'filscan',
         provider: 'actor',
     },
+    /*
     {
         repdao: 'gravity_assist',
         polybase: 'gravity_assist_retrieval_bot',
         provider: 'provider_id',
     },
+    */
     {
         repdao: 'kentiks',
         polybase: 'kentik',

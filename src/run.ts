@@ -5,6 +5,7 @@ import {MongoClient, ObjectId} from "mongodb";
 import PQueue from 'p-queue';
 import pRetry from 'p-retry';
 import {argFields} from "./schemas/argFields.js";
+import {collections} from "./types.js";
 
 const polydb = new Polybase({
     signer: (data) => {
@@ -18,13 +19,6 @@ const polydb = new Polybase({
 
 const mongo = new MongoClient(process.env.MONGO_URI!)
 const queue = new PQueue({concurrency: 64})
-
-const collections = [
-    {
-        repdao: 'Filfox',
-        polybase: 'filfox',
-    }
-]
 
 try {
     for (const {repdao, polybase} of collections) {
