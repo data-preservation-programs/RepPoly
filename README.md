@@ -14,6 +14,7 @@ import {DefaultNamespace, filfox} from "@dataprograms/repdao-polybase";
 
 const polydb = new Polybase({
     defaultNamespace: DefaultNamespace,
+    baseURL: "https://mainnet.polybase.xyz/v0",
 })
 
 const provider = 'f01889512'

@@ -7,7 +7,13 @@ import {collections} from "./types.js";
 const client = new MongoClient(process.env.MONGO_URI!);
 const argExports: string[] = []
 argExports.push('// Auto-generated, do not modify')
-argExports.push('export const argFields: {[key:string]: string[]} = {')
+argExports.push(`
+export interface Field {
+  name: string
+  type: string
+}
+`)
+argExports.push('export const argFields: {[key:string]: Field[]} = {')
 for (const {repdao, polybase, provider} of collections) {
     const doc = await client.db('reputation').collection(repdao).findOne()
     if (doc === null) {
@@ -18,7 +24,7 @@ for (const {repdao, polybase, provider} of collections) {
     const schema: string[] = []
     const poly: string[] = []
     const argList: [string, string][] = []
-    const fields: string[] = []
+    const fields: [string, string][] = []
     schema.push('// Auto-generated, do not modify')
     // schema.push('import {ObjectId} from "mongodb";')
     // schema.push(`export interface ${repdao} {`)
@@ -35,7 +41,7 @@ for (const {repdao, polybase, provider} of collections) {
                         // schema.push(`  ${key}: ObjectId;`)
                         poly.push(`  id: string;`)
                         argList.push(['id', 'string'])
-                        fields.push(key)
+                        fields.push([key, 'string'])
                     } else {
                         console.error(`Unknown ObjectId ${key} from ${repdao}`)
                     }
@@ -44,7 +50,7 @@ for (const {repdao, polybase, provider} of collections) {
                     // schema.push(`  ${key}: Date;`)
                     poly.push(`  ${key}: string;`)
                     argList.push([key, 'string'])
-                    fields.push(key)
+                    fields.push([key, 'string'])
                     continue
                 default:
                     console.error(`Unknown type ${type} (${doc[key].constructor.name}) for ${key}. Skipped`)
@@ -59,7 +65,7 @@ for (const {repdao, polybase, provider} of collections) {
         // schema.push(`  ${key}: ${type};`)
         poly.push(`  ${newKey}: ${type};`)
         argList.push([newKey, type])
-        fields.push(key)
+        fields.push([key, type])
     }
 
     // schema.push('}')
@@ -81,7 +87,7 @@ for (const {repdao, polybase, provider} of collections) {
     fs.writeFileSync(`./src/schemas/${polybase}.ts`, schema.join('\n'))
     console.log(`Writing ./src/schemas/${polybase}.polylang`)
     fs.writeFileSync(`./src/schemas/${polybase}.polylang`, poly.join('\n'))
-    argExports.push(`  '${repdao}' :[` + fields.map(key => `'${key}'`).join(', ') + '],')
+    argExports.push(`  '${repdao}' :[` + fields.map(([key, type]) => `{name:'${key}', type:'${type}'}`).join(', ') + '],')
 }
 argExports.push('}')
 console.log(`Writing ./src/schemas/argFields.ts`)

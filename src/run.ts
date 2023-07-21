@@ -15,6 +15,7 @@ const polydb = new Polybase({
         }
     },
     defaultNamespace: 'pk/' + process.env.PUBLIC_KEY,
+    // baseURL: "https://mainnet.polybase.xyz/v0",
 })
 
 const mongo = new MongoClient(process.env.MONGO_URI!)
@@ -38,9 +39,21 @@ try {
                 console.log(`Creating ${polybase} record for`, doc._id.toString())
                 const fields = argFields[repdao]
                 const values = fields.map((field) => {
-                    const value = doc[field]
+                    const value = doc[field.name]
                     if (value instanceof ObjectId) {
                         return value.toString()
+                    }
+                    if (value == null) {
+                        switch (field.type) {
+                            case 'string':
+                                return ''
+                            case 'number':
+                                return 0
+                            case 'boolean':
+                                return false
+                            default:
+                                throw new Error(`Unknown type ${field.type}`)
+                        }
                     }
                     return value
                 })
@@ -54,7 +67,7 @@ try {
                         throw e
                     }
                 }, {
-                    maxTimeout: 120000,
+                    maxTimeout: 30000,
                 })
             })
         }
