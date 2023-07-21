@@ -22,6 +22,20 @@ const doc = (await DB.collection('filfox')
 console.log(`Filfox record for ${provider}: total rewards: ${doc.totalRewards}`)
 ```
 
+Or using javascript without type check
+```javascript
+import {DB} from "@dataprograms/repdao-polybase";
+
+const provider = 'f01889512'
+
+const doc = (await DB.collection('filfox')
+    .where('provider', '==', provider)
+    .limit(1).get())
+    .data[0].data
+
+console.log(`Filfox record for ${provider}: total rewards: ${doc.totalRewards}`)
+```
+
 Or explore all available collections
 ```typescript
 import {CollectionNames} from "@dataprograms/repdao-polybase";
