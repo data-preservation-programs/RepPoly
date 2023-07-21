@@ -1,3 +1,5 @@
+import {Polybase} from "@polybase/client";
+
 export interface Collection {
     repdao: string,
     polybase: CollectionName,
@@ -22,6 +24,11 @@ export const CollectionNames: CollectionName[] = [
 ]
 
 export const DefaultNamespace = 'pk/0x38d810a48aed860010ddd510ca9070b383490b3521972cdbd296d373dcd7183c8a885e1a2fd6fb2805216398a0ac5cf11a40ed452c3e4f893ca3ca794da3fbbf'
+
+export const DB = new Polybase({
+    defaultNamespace: DefaultNamespace,
+    // baseURL: "https://mainnet.polybase.xyz/v0",
+})
 
 export const collections: Collection[] = [
     {

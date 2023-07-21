@@ -10,16 +10,11 @@ npm i @dataprograms/repdao-polybase
 
 Then import the types you need
 ```typescript
-import {DefaultNamespace, filfox} from "@dataprograms/repdao-polybase";
-
-const polydb = new Polybase({
-    defaultNamespace: DefaultNamespace,
-    baseURL: "https://mainnet.polybase.xyz/v0",
-})
+import {DB, filfox} from "@dataprograms/repdao-polybase";
 
 const provider = 'f01889512'
 
-const doc = (await polydb.collection('filfox')
+const doc = (await DB.collection('filfox')
     .where('provider', '==', provider)
     .limit(1).get())
     .data[0].data as filfox
@@ -34,7 +29,7 @@ import {CollectionNames} from "@dataprograms/repdao-polybase";
 for (const collectionName of CollectionNames) {
     let response
     try {
-        response = await polydb.collection(collectionName).where('provider', '==', provider).limit(1).get()
+        response = await DB.collection(collectionName).where('provider', '==', provider).limit(1).get()
     } catch (e: any) {
         if (e instanceof PolybaseError) {
             console.error(`Polybase error: ${e.code} ${e.message} when retrieving ${collectionName} record for ${provider}`)
