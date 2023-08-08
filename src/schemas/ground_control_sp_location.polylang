@@ -1,5 +1,5 @@
 @read
-collection kentik {
+collection ground_control_sp_location {
   id: string;
   date: string;
   multiaddr: string;

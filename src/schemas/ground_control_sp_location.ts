@@ -1,5 +1,5 @@
 // Auto-generated, do not modify
-export interface kentik {
+export interface ground_control_sp_location {
   id: string;
   date: string;
   multiaddr: string;

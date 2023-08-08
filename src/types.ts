@@ -6,7 +6,7 @@ export interface Collection {
     provider: string,
 }
 
-export type CollectionName = 'filfox' | 'filrep' | 'filscan' | 'gravity_assist_retrieval_bot' | 'kentik'
+export type CollectionName = 'filfox' | 'filrep' | 'filscan' | 'gravity_assist_retrieval_bot' | 'ground_control_sp_location'
     | 'lassie_bedrock' | 'protocol_labs_retrieval_bot' | 'filecoin_foundation_retrieval_bot' | 'slingshot_retrievalbot'
     | 'starboard'
 
@@ -15,7 +15,7 @@ export const CollectionNames: CollectionName[] = [
     'filrep',
     'filscan',
     //'gravity_assist_retrieval_bot',
-    'kentik',
+    'ground_control_sp_location',
     'lassie_bedrock',
     'protocol_labs_retrieval_bot',
     'filecoin_foundation_retrieval_bot',
@@ -55,7 +55,7 @@ export const collections: Collection[] = [
     */
     {
         repdao: 'kentiks',
-        polybase: 'kentik',
+        polybase: 'ground_control_sp_location',
         provider: 'provider',
     },
     {
