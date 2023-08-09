@@ -1,11 +1,12 @@
 // Auto-generated, do not modify
 export interface filfox {
   id: string;
-  provider: string;
-  epoch: number;
-  rawBytePower: string;
-  qualityAdjPower: string;
   blocksMined: number;
-  weightedBlocksMined: number;
+  ds: string;
+  epoch: number;
+  provider: string;
+  qualityAdjPower: string;
+  rawBytePower: string;
   totalRewards: string;
+  weightedBlocksMined: number;
 }
