@@ -42,4 +42,12 @@ collection starboard {
     this.win_count = win_count;
     this.windowpost_gas_fee = windowpost_gas_fee;
   }
+
+  del () {
+    if (owner != ctx.auth) {
+      throw error();
+    }
+
+    selfdestruct();
+  }
 }

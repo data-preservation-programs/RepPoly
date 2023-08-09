@@ -26,4 +26,12 @@ collection slingshot_retrievalbot {
     this.http_retrievals = http_retrievals;
     this.provider = provider;
   }
+
+  del () {
+    if (owner != ctx.auth) {
+      throw error();
+    }
+
+    selfdestruct();
+  }
 }
