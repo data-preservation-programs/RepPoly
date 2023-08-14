@@ -7,8 +7,7 @@ export interface ground_control_sp_location {
   agentLatitude: number;
   agentLongitude: number;
   agentRegion: string;
-  date: string;
-  ds: string;
+  date_stamp: string;
   latencyMs: number;
   multiaddr: string;
   provider: string;

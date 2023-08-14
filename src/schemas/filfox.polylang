@@ -2,17 +2,17 @@
 collection filfox {
   id: string;
   blocksMined: number;
-  ds: string;
+  date_stamp: string;
   epoch: number;
   provider: string;
   qualityAdjPower: string;
   rawBytePower: string;
   totalRewards: string;
   weightedBlocksMined: number;
-  constructor (id: string, blocksMined: number, ds: string, epoch: number, provider: string, qualityAdjPower: string, rawBytePower: string, totalRewards: string, weightedBlocksMined: number) {
+  constructor (id: string, blocksMined: number, date_stamp: string, epoch: number, provider: string, qualityAdjPower: string, rawBytePower: string, totalRewards: string, weightedBlocksMined: number) {
     this.id = id;
     this.blocksMined = blocksMined;
-    this.ds = ds;
+    this.date_stamp = date_stamp;
     this.epoch = epoch;
     this.provider = provider;
     this.qualityAdjPower = qualityAdjPower;
