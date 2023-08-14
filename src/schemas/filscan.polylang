@@ -24,4 +24,12 @@ collection filscan {
     this.recover_sector_count = recover_sector_count;
     this.terminated_sector_count = terminated_sector_count;
   }
+
+  del () {
+    if (owner != ctx.auth) {
+      throw error();
+    }
+
+    selfdestruct();
+  }
 }

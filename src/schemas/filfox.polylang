@@ -20,4 +20,12 @@ collection filfox {
     this.totalRewards = totalRewards;
     this.weightedBlocksMined = weightedBlocksMined;
   }
+
+  del () {
+    if (owner != ctx.auth) {
+      throw error();
+    }
+
+    selfdestruct();
+  }
 }

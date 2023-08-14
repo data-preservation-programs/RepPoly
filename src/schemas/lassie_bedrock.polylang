@@ -22,4 +22,12 @@ collection lassie_bedrock {
     this.success = success;
     this.time_to_first_byte_ms = time_to_first_byte_ms;
   }
+
+  del () {
+    if (owner != ctx.auth) {
+      throw error();
+    }
+
+    selfdestruct();
+  }
 }
