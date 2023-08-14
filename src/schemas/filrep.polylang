@@ -18,4 +18,12 @@ collection filrep {
     this.recentDeals = recentDeals;
     this.verifiedPrice = verifiedPrice;
   }
+
+  del () {
+    if (owner != ctx.auth) {
+      throw error();
+    }
+
+    selfdestruct();
+  }
 }

@@ -74,6 +74,7 @@ for (const {repdao, polybase, provider} of collections) {
     if (schemasNeedingDateStamp.includes(polybase)) {
         collectionParams.push(`  ds: string;`)
         argList.push(['ds', 'string'])
+        fields.push(['ds', 'string'])
     }
     collectionParams.sort();
     collectionParams.forEach(function (p) {poly.push(p)})
@@ -102,6 +103,14 @@ for (const {repdao, polybase, provider} of collections) {
     for (const [key, _type] of argList) {
         poly.push(`    this.${key} = ${key};`)
     }
+    poly.push('  }')
+    poly.push('\n  del () {')
+
+    poly.push('    if (owner != ctx.auth) {')
+    poly.push('      throw error();')
+    poly.push( '    }')
+                
+    poly.push('\n    selfdestruct();')
     poly.push('  }')
     poly.push('}')
 

@@ -28,4 +28,12 @@ collection ground_control_sp_location {
     this.provider = provider;
     this.testId = testId;
   }
+
+  del () {
+    if (owner != ctx.auth) {
+      throw error();
+    }
+
+    selfdestruct();
+  }
 }
