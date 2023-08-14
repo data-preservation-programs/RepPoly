@@ -46,13 +46,13 @@ export const collections: Collection[] = [
         polybase: 'filscan',
         provider: 'actor',
     },
-    /*
-    {
-        repdao: 'gravity_assist',
-        polybase: 'gravity_assist_retrieval_bot',
-        provider: 'provider_id',
-    },
-    */
+    // /*
+    // {
+    //     repdao: 'gravity_assist',
+    //     polybase: 'gravity_assist_retrieval_bot',
+    //     provider: 'provider_id',
+    // },
+    // */
     {
         repdao: 'kentiks',
         polybase: 'ground_control_sp_location',
@@ -61,7 +61,7 @@ export const collections: Collection[] = [
     {
         repdao: 'lassie',
         polybase: 'lassie_bedrock',
-        provider: 'storage_provider_id',
+        provider: 'sp_id',
     },
     {
         repdao: 'retrievalbot_1',
