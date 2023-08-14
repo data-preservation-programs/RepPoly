@@ -5,7 +5,7 @@ collection starboard {
   base_tx_fee: string;
   batch_fee: string;
   blocks_mined: number;
-  ds: string;
+  date_stamp: string;
   fee_debt: number;
   initial_pledge: number;
   locked_funds: number;
@@ -20,13 +20,13 @@ collection starboard {
   stat_date: string;
   win_count: number;
   windowpost_gas_fee: string;
-  constructor (id: string, balance: number, base_tx_fee: string, batch_fee: string, blocks_mined: number, ds: string, fee_debt: number, initial_pledge: number, locked_funds: number, miner_tip: string, onboarding_at: string, over_estimation_burn: string, pre_commit_deposits: number, provider: string, provider_collateral: number, rewards: number, sector_size: number, stat_date: string, win_count: number, windowpost_gas_fee: string) {
+  constructor (id: string, balance: number, base_tx_fee: string, batch_fee: string, blocks_mined: number, date_stamp: string, fee_debt: number, initial_pledge: number, locked_funds: number, miner_tip: string, onboarding_at: string, over_estimation_burn: string, pre_commit_deposits: number, provider: string, provider_collateral: number, rewards: number, sector_size: number, stat_date: string, win_count: number, windowpost_gas_fee: string) {
     this.id = id;
     this.balance = balance;
     this.base_tx_fee = base_tx_fee;
     this.batch_fee = batch_fee;
     this.blocks_mined = blocks_mined;
-    this.ds = ds;
+    this.date_stamp = date_stamp;
     this.fee_debt = fee_debt;
     this.initial_pledge = initial_pledge;
     this.locked_funds = locked_funds;

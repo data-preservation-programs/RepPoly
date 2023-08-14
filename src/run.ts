@@ -4,7 +4,7 @@ import 'dotenv/config'
 import {MongoClient, ObjectId} from "mongodb";
 import PQueue from 'p-queue';
 import pRetry from 'p-retry';
-import {argFields} from "./schemas/argFields.js";
+import {Field, argFields} from "./schemas/argFields.js";
 import {collections} from "./types.js";
 
 const polydb = new Polybase({
@@ -35,18 +35,17 @@ try {
                 $gt: new ObjectId(lastId)
             }
         }
-
         for await (const doc of mongoCol.find(match).sort('_id', 'asc')) {
             queue.add(() => {
                 console.log(`Creating ${polybase} record for`, doc._id.toString())
                 var fields = argFields[repdao];
-                fields.forEach(function(f) {
+                fields.forEach(function(f: Field) {
                     if (f.name === provider) {
                         f.name = 'provider'
                     }
                 })
 
-                fields.sort(function(a, b) {
+                fields.sort(function(a: Field, b: Field) {
                     if (a.name == '_id') {
                         return 1;
                     }
@@ -56,8 +55,8 @@ try {
                     return a.name.localeCompare(b.name);
                   });
  
-                const values = fields.map((field) => {
-                    if (field.name == 'ds') {
+                const values = fields.map((field: Field) => {
+                    if (field.name == 'date_stamp') {
                         if (polybase == 'filfox' || polybase == 'filscan') {
                             return epochToDate(doc['epoch'])
                         }
@@ -110,7 +109,7 @@ try {
                         }
                     } catch (e : any) {
                         console.log(e.toString() + ' in ' + polybase)
-                        fields.forEach(function(f) {console.log(f.name + " " + f.type)})
+                        fields.forEach(function(f: Field) {console.log(f.name + " " + f.type)})
                         console.log(values.join(', '));
                         if (e instanceof PolybaseError && e.code === 'already-exists') {
                             return

@@ -5,8 +5,7 @@ export interface slingshot_retrievalbot {
   avg_ttfb_ms: number;
   bitswap_retrieval_success: number;
   bitswap_retrievals: number;
-  date: string;
-  ds: string;
+  date_stamp: string;
   graphsync_retrieval_success: number;
   graphsync_retrievals: number;
   http_retrieval_success: number;

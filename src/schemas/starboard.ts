@@ -5,7 +5,7 @@ export interface starboard {
   base_tx_fee: string;
   batch_fee: string;
   blocks_mined: number;
-  ds: string;
+  date_stamp: string;
   fee_debt: number;
   initial_pledge: number;
   locked_funds: number;
