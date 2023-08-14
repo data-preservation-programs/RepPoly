@@ -5,21 +5,19 @@ collection filecoin_foundation_retrieval_bot {
   avg_ttfb_ms: number;
   bitswap_retrieval_success: number;
   bitswap_retrievals: number;
-  date: string;
-  ds: string;
+  date_stamp: string;
   graphsync_retrieval_success: number;
   graphsync_retrievals: number;
   http_retrieval_success: number;
   http_retrievals: number;
   provider: string;
-  constructor (id: string, avg_speed_bps: number, avg_ttfb_ms: number, bitswap_retrieval_success: number, bitswap_retrievals: number, date: string, ds: string, graphsync_retrieval_success: number, graphsync_retrievals: number, http_retrieval_success: number, http_retrievals: number, provider: string) {
+  constructor (id: string, avg_speed_bps: number, avg_ttfb_ms: number, bitswap_retrieval_success: number, bitswap_retrievals: number, date_stamp: string, graphsync_retrieval_success: number, graphsync_retrievals: number, http_retrieval_success: number, http_retrievals: number, provider: string) {
     this.id = id;
     this.avg_speed_bps = avg_speed_bps;
     this.avg_ttfb_ms = avg_ttfb_ms;
     this.bitswap_retrieval_success = bitswap_retrieval_success;
     this.bitswap_retrievals = bitswap_retrievals;
-    this.date = date;
-    this.ds = ds;
+    this.date_stamp = date_stamp;
     this.graphsync_retrieval_success = graphsync_retrieval_success;
     this.graphsync_retrievals = graphsync_retrievals;
     this.http_retrieval_success = http_retrieval_success;
