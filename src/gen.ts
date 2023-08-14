@@ -4,6 +4,8 @@ import fs from 'fs'
 import {collections} from "./types.js";
 
 
+const schemasNeedingDateStamp = ['filfox', 'filscan', 'gravity_assist_retrieval_bot', 'ground_control_sp_location', 
+'lassie_bedrock', 'protocol_labs_retrieval_bot', 'filecoin_foundation_retrieval_bot', 'slingshot_retrievalbot', 'starboard'];
 const client = new MongoClient(process.env.MONGO_URI!);
 const argExports: string[] = []
 argExports.push('// Auto-generated, do not modify')
@@ -25,6 +27,7 @@ for (const {repdao, polybase, provider} of collections) {
     const poly: string[] = []
     const argList: [string, string][] = []
     const fields: [string, string][] = []
+    const collectionParams: string[] = []
     schema.push('// Auto-generated, do not modify')
     // schema.push('import {ObjectId} from "mongodb";')
     // schema.push(`export interface ${repdao} {`)
@@ -48,7 +51,7 @@ for (const {repdao, polybase, provider} of collections) {
                     continue
                 case 'Date':
                     // schema.push(`  ${key}: Date;`)
-                    poly.push(`  ${key}: string;`)
+                    collectionParams.push(`  ${key}: string;`)
                     argList.push([key, 'string'])
                     fields.push([key, 'string'])
                     continue
@@ -63,16 +66,35 @@ for (const {repdao, polybase, provider} of collections) {
         }
         let newKey = key === provider ? 'provider' : key
         // schema.push(`  ${key}: ${type};`)
-        poly.push(`  ${newKey}: ${type};`)
+        collectionParams.push(`  ${newKey}: ${type};`)
         argList.push([newKey, type])
         fields.push([key, type])
     }
 
+    if (schemasNeedingDateStamp.includes(polybase)) {
+        collectionParams.push(`  ds: string;`)
+        argList.push(['ds', 'string'])
+    }
+    collectionParams.sort();
+    collectionParams.forEach(function (p) {poly.push(p)})
+
+    argList.sort(function(a, b) {
+        if (a[0] == 'id') {
+            return 1;
+        }
+        if (b[0] == 'id') {
+            return 1;
+        }
+        return a[0].localeCompare(b[0]);
+      });
+
     // schema.push('}')
+
     schema.push(`export interface ${polybase} {`)
     for (let [key, type] of argList) {
         schema.push(`  ${key}: ${type};`)
     }
+
     schema.push('}')
 
     const args = argList.map(([key, type]) => `${key}: ${type}`).join(', ')

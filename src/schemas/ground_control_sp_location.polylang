@@ -1,0 +1,31 @@
+@read
+collection ground_control_sp_location {
+  id: string;
+  __v: number;
+  agentCity: string;
+  agentCountry: string;
+  agentLatitude: number;
+  agentLongitude: number;
+  agentRegion: string;
+  date: string;
+  ds: string;
+  latencyMs: number;
+  multiaddr: string;
+  provider: string;
+  testId: string;
+  constructor (id: string, __v: number, agentCity: string, agentCountry: string, agentLatitude: number, agentLongitude: number, agentRegion: string, date: string, ds: string, latencyMs: number, multiaddr: string, provider: string, testId: string) {
+    this.id = id;
+    this.__v = __v;
+    this.agentCity = agentCity;
+    this.agentCountry = agentCountry;
+    this.agentLatitude = agentLatitude;
+    this.agentLongitude = agentLongitude;
+    this.agentRegion = agentRegion;
+    this.date = date;
+    this.ds = ds;
+    this.latencyMs = latencyMs;
+    this.multiaddr = multiaddr;
+    this.provider = provider;
+    this.testId = testId;
+  }
+}
