@@ -61,3 +61,31 @@ for (const collectionName of CollectionNames) {
     console.log(doc)
 }
 ```
+
+You will need to set the following env variables in an .env file in the root folder
+
+```
+PRIVATE_KEY=<PRIVATE_KEY>
+PUBLIC_KEY=<PUBLIC_KEY>
+MONGO_URI=<MONGO_URI>
+```
+
+To create schemas files and run the code gen run
+
+```
+ts-node --esm src/create_schema.ts
+```
+
+To create/update and generate schemas and run the code gen run
+
+```
+ts-node --esm src/gen.ts
+```
+
+To pull data from mongo and push to polybase run 
+
+```
+ts-node --esm src/run.ts
+```
+
+(uncomment baseURL if you want to push the changes to mainnet)
