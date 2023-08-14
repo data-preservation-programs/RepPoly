@@ -1,21 +1,23 @@
 @read
 collection filfox {
   id: string;
-  provider: string;
-  epoch: number;
-  rawBytePower: string;
-  qualityAdjPower: string;
   blocksMined: number;
-  weightedBlocksMined: number;
+  ds: string;
+  epoch: number;
+  provider: string;
+  qualityAdjPower: string;
+  rawBytePower: string;
   totalRewards: string;
-  constructor (id: string, provider: string, epoch: number, rawBytePower: string, qualityAdjPower: string, blocksMined: number, weightedBlocksMined: number, totalRewards: string) {
+  weightedBlocksMined: number;
+  constructor (id: string, blocksMined: number, ds: string, epoch: number, provider: string, qualityAdjPower: string, rawBytePower: string, totalRewards: string, weightedBlocksMined: number) {
     this.id = id;
-    this.provider = provider;
-    this.epoch = epoch;
-    this.rawBytePower = rawBytePower;
-    this.qualityAdjPower = qualityAdjPower;
     this.blocksMined = blocksMined;
-    this.weightedBlocksMined = weightedBlocksMined;
+    this.ds = ds;
+    this.epoch = epoch;
+    this.provider = provider;
+    this.qualityAdjPower = qualityAdjPower;
+    this.rawBytePower = rawBytePower;
     this.totalRewards = totalRewards;
+    this.weightedBlocksMined = weightedBlocksMined;
   }
 }

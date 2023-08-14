@@ -1,21 +1,21 @@
 @read
 collection filrep {
   id: string;
-  provider: string;
-  reachability: string;
-  price: string;
-  verifiedPrice: string;
-  recentDeals: number;
-  rank: number;
   __v: number;
-  constructor (id: string, provider: string, reachability: string, price: string, verifiedPrice: string, recentDeals: number, rank: number, __v: number) {
+  price: string;
+  provider: string;
+  rank: number;
+  reachability: string;
+  recentDeals: number;
+  verifiedPrice: string;
+  constructor (id: string, __v: number, price: string, provider: string, rank: number, reachability: string, recentDeals: number, verifiedPrice: string) {
     this.id = id;
-    this.provider = provider;
-    this.reachability = reachability;
-    this.price = price;
-    this.verifiedPrice = verifiedPrice;
-    this.recentDeals = recentDeals;
-    this.rank = rank;
     this.__v = __v;
+    this.price = price;
+    this.provider = provider;
+    this.rank = rank;
+    this.reachability = reachability;
+    this.recentDeals = recentDeals;
+    this.verifiedPrice = verifiedPrice;
   }
 }

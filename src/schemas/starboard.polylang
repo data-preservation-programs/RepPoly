@@ -1,43 +1,45 @@
 @read
 collection starboard {
   id: string;
-  stat_date: string;
-  onboarding_at: string;
-  sector_size: number;
   balance: number;
+  base_tx_fee: string;
+  batch_fee: string;
+  blocks_mined: number;
+  ds: string;
+  fee_debt: number;
   initial_pledge: number;
   locked_funds: number;
-  pre_commit_deposits: number;
-  provider_collateral: number;
-  fee_debt: number;
-  base_tx_fee: string;
-  over_estimation_burn: string;
-  batch_fee: string;
   miner_tip: string;
-  windowpost_gas_fee: string;
-  blocks_mined: number;
-  win_count: number;
-  rewards: number;
+  onboarding_at: string;
+  over_estimation_burn: string;
+  pre_commit_deposits: number;
   provider: string;
-  constructor (id: string, stat_date: string, onboarding_at: string, sector_size: number, balance: number, initial_pledge: number, locked_funds: number, pre_commit_deposits: number, provider_collateral: number, fee_debt: number, base_tx_fee: string, over_estimation_burn: string, batch_fee: string, miner_tip: string, windowpost_gas_fee: string, blocks_mined: number, win_count: number, rewards: number, provider: string) {
+  provider_collateral: number;
+  rewards: number;
+  sector_size: number;
+  stat_date: string;
+  win_count: number;
+  windowpost_gas_fee: string;
+  constructor (id: string, balance: number, base_tx_fee: string, batch_fee: string, blocks_mined: number, ds: string, fee_debt: number, initial_pledge: number, locked_funds: number, miner_tip: string, onboarding_at: string, over_estimation_burn: string, pre_commit_deposits: number, provider: string, provider_collateral: number, rewards: number, sector_size: number, stat_date: string, win_count: number, windowpost_gas_fee: string) {
     this.id = id;
-    this.stat_date = stat_date;
-    this.onboarding_at = onboarding_at;
-    this.sector_size = sector_size;
     this.balance = balance;
+    this.base_tx_fee = base_tx_fee;
+    this.batch_fee = batch_fee;
+    this.blocks_mined = blocks_mined;
+    this.ds = ds;
+    this.fee_debt = fee_debt;
     this.initial_pledge = initial_pledge;
     this.locked_funds = locked_funds;
-    this.pre_commit_deposits = pre_commit_deposits;
-    this.provider_collateral = provider_collateral;
-    this.fee_debt = fee_debt;
-    this.base_tx_fee = base_tx_fee;
-    this.over_estimation_burn = over_estimation_burn;
-    this.batch_fee = batch_fee;
     this.miner_tip = miner_tip;
-    this.windowpost_gas_fee = windowpost_gas_fee;
-    this.blocks_mined = blocks_mined;
-    this.win_count = win_count;
-    this.rewards = rewards;
+    this.onboarding_at = onboarding_at;
+    this.over_estimation_burn = over_estimation_burn;
+    this.pre_commit_deposits = pre_commit_deposits;
     this.provider = provider;
+    this.provider_collateral = provider_collateral;
+    this.rewards = rewards;
+    this.sector_size = sector_size;
+    this.stat_date = stat_date;
+    this.win_count = win_count;
+    this.windowpost_gas_fee = windowpost_gas_fee;
   }
 }
