@@ -4,8 +4,8 @@ import fs from 'fs'
 import {collections} from "./types.js";
 
 
-const schemasNeedingDateStamp = ['filfox', 'filscan', 'gravity_assist_retrieval_bot', 'ground_control_sp_location', 
-'lassie_bedrock', 'protocol_labs_retrieval_bot', 'filecoin_foundation_retrieval_bot', 'slingshot_retrievalbot', 'starboard'];
+const schemasNeedingDateStamp = ['filfox', 'filscan', 'ground_control_sp_location', 
+'lassie_bedrock', 'starboard'];
 const client = new MongoClient(process.env.MONGO_URI!);
 const argExports: string[] = []
 argExports.push('// Auto-generated, do not modify')
@@ -17,12 +17,14 @@ export interface Field {
 `)
 argExports.push('export const argFields: {[key:string]: Field[]} = {')
 for (const {repdao, polybase, provider} of collections) {
-    const doc = await client.db('reputation').collection(repdao).findOne()
+    if (polybase == 'filrep') {continue}
+    const doc = await client.db('reputation').collection(repdao).findOne({}, {sort:{$natural:-1}})
     if (doc === null) {
         console.error(`No doc found for ${repdao}`)
         continue
     }
-
+    console.log(repdao)
+    console.log(doc)
     const schema: string[] = []
     const poly: string[] = []
     const argList: [string, string][] = []
@@ -37,6 +39,8 @@ for (const {repdao, polybase, provider} of collections) {
 
     for (const key of Object.keys(doc)) {
         const type = typeof doc[key]
+        console.log(key + " " + type + " " + doc[key])
+        
         if (type === 'object') {
             switch (doc[key].constructor.name) {
                 case 'ObjectId':
@@ -72,9 +76,9 @@ for (const {repdao, polybase, provider} of collections) {
     }
 
     if (schemasNeedingDateStamp.includes(polybase)) {
-        collectionParams.push(`  ds: string;`)
-        argList.push(['ds', 'string'])
-        fields.push(['ds', 'string'])
+        collectionParams.push(`  date_stamp: string;`)
+        argList.push(['date_stamp', 'string'])
+        fields.push(['date_stamp', 'string'])
     }
     collectionParams.sort();
     collectionParams.forEach(function (p) {poly.push(p)})

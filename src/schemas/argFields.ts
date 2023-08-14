@@ -1,18 +1,140 @@
-// Auto-generated, do not modify
+/*
+  Files initially sorted by field name for both .ts .polylang files. Going 
+  forward adding new fields should be added at the end of the collection
+  to help prevent columns ending up with wrong values.
+*/
 
 export interface Field {
   name: string
   type: string
 }
 
-export const argFields: {[key:string]: Field[]} = {
-  'Filfox' :[{name:'_id', type:'string'}, {name:'miner', type:'string'}, {name:'epoch', type:'number'}, {name:'rawBytePower', type:'string'}, {name:'qualityAdjPower', type:'string'}, {name:'blocksMined', type:'number'}, {name:'weightedBlocksMined', type:'number'}, {name:'totalRewards', type:'string'}, {name:'ds', type:'string'}],
-  'filrep' :[{name:'_id', type:'string'}, {name:'miner', type:'string'}, {name:'reachability', type:'string'}, {name:'price', type:'string'}, {name:'verifiedPrice', type:'string'}, {name:'recentDeals', type:'number'}, {name:'rank', type:'number'}, {name:'__v', type:'number'}],
-  'filscan' :[{name:'_id', type:'string'}, {name:'balance', type:'string'}, {name:'epoch', type:'number'}, {name:'fault_sector_count', type:'number'}, {name:'active_sector_count', type:'number'}, {name:'live_sector_count', type:'number'}, {name:'recover_sector_count', type:'number'}, {name:'terminated_sector_count', type:'number'}, {name:'multi_address', type:'string'}, {name:'actor', type:'string'}, {name:'ds', type:'string'}],
-  'kentiks' :[{name:'_id', type:'string'}, {name:'date', type:'string'}, {name:'multiaddr', type:'string'}, {name:'provider', type:'string'}, {name:'testId', type:'string'}, {name:'__v', type:'number'}, {name:'agentCity', type:'string'}, {name:'agentCountry', type:'string'}, {name:'agentLatitude', type:'number'}, {name:'agentLongitude', type:'number'}, {name:'agentRegion', type:'string'}, {name:'latencyMs', type:'number'}, {name:'ds', type:'string'}],
-  'lassie' :[{name:'_id', type:'string'}, {name:'retrieval_id', type:'string'}, {name:'instance_id', type:'string'}, {name:'storage_provider_id', type:'string'}, {name:'time_to_first_byte_ms', type:'number'}, {name:'bandwidth_bytes_sec', type:'number'}, {name:'success', type:'boolean'}, {name:'start_time', type:'string'}, {name:'end_time', type:'string'}, {name:'ds', type:'string'}],
-  'retrievalbot_1' :[{name:'_id', type:'string'}, {name:'provider_id', type:'string'}, {name:'date', type:'string'}, {name:'http_retrievals', type:'number'}, {name:'http_retrieval_success', type:'number'}, {name:'graphsync_retrievals', type:'number'}, {name:'graphsync_retrieval_success', type:'number'}, {name:'bitswap_retrievals', type:'number'}, {name:'bitswap_retrieval_success', type:'number'}, {name:'avg_ttfb_ms', type:'number'}, {name:'avg_speed_bps', type:'number'}, {name:'ds', type:'string'}],
-  'retrievalbot_2' :[{name:'_id', type:'string'}, {name:'provider_id', type:'string'}, {name:'date', type:'string'}, {name:'http_retrievals', type:'number'}, {name:'http_retrieval_success', type:'number'}, {name:'graphsync_retrievals', type:'number'}, {name:'graphsync_retrieval_success', type:'number'}, {name:'bitswap_retrievals', type:'number'}, {name:'bitswap_retrieval_success', type:'number'}, {name:'avg_ttfb_ms', type:'number'}, {name:'avg_speed_bps', type:'number'}, {name:'ds', type:'string'}],
-  'retrievalbot_3' :[{name:'_id', type:'string'}, {name:'provider_id', type:'string'}, {name:'date', type:'string'}, {name:'http_retrievals', type:'number'}, {name:'http_retrieval_success', type:'number'}, {name:'graphsync_retrievals', type:'number'}, {name:'graphsync_retrieval_success', type:'number'}, {name:'bitswap_retrievals', type:'number'}, {name:'bitswap_retrieval_success', type:'number'}, {name:'avg_ttfb_ms', type:'number'}, {name:'avg_speed_bps', type:'number'}, {name:'ds', type:'string'}],
-  'starboard' :[{name:'_id', type:'string'}, {name:'stat_date', type:'string'}, {name:'onboarding_at', type:'string'}, {name:'sector_size', type:'number'}, {name:'balance', type:'number'}, {name:'initial_pledge', type:'number'}, {name:'locked_funds', type:'number'}, {name:'pre_commit_deposits', type:'number'}, {name:'provider_collateral', type:'number'}, {name:'fee_debt', type:'number'}, {name:'base_tx_fee', type:'string'}, {name:'over_estimation_burn', type:'string'}, {name:'batch_fee', type:'string'}, {name:'miner_tip', type:'string'}, {name:'windowpost_gas_fee', type:'string'}, {name:'blocks_mined', type:'number'}, {name:'win_count', type:'number'}, {name:'rewards', type:'number'}, {name:'provider_id', type:'string'}, {name:'ds', type:'string'}],
+export const argFields: { [key: string]: Field[] } = {
+  'Filfox': [
+    { name: '_id', type: 'string' },
+    { name: 'blocksMined', type: 'number' },
+    { name: 'date_stamp', type: 'string' },
+    { name: 'epoch', type: 'number' },
+    { name: 'miner', type: 'string' },
+    { name: 'qualityAdjPower', type: 'string' },
+    { name: 'rawBytePower', type: 'string' },
+    { name: 'totalRewards', type: 'string' },
+    { name: 'weightedBlocksMined', type: 'number' },
+  ],
+  'filrep': [
+    { name: '_id', type: 'string' },
+    { name: '__v', type: 'number' },
+    { name: 'miner', type: 'string' },
+    { name: 'price', type: 'string' },
+    { name: 'rank', type: 'number' },
+    { name: 'reachability', type: 'string' },
+    { name: 'recentDeals', type: 'number' },
+    { name: 'verifiedPrice', type: 'string' },
+  ],
+  'filscan': [
+    { name: '_id', type: 'string' },
+    { name: 'active_sector_count', type: 'number' },
+    { name: 'actor', type: 'string' },
+    { name: 'balance', type: 'string' },
+    { name: 'date_stamp', type: 'string' },
+    { name: 'epoch', type: 'number' },
+    { name: 'fault_sector_count', type: 'number' },
+    { name: 'live_sector_count', type: 'number' },
+    { name: 'multi_address', type: 'string' },
+    { name: 'recover_sector_count', type: 'number' },
+    { name: 'terminated_sector_count', type: 'number' },
+  ],
+  // ground_control_sp_location
+  'kentiks': [
+    { name: '_id', type: 'string' },
+    { name: '__v', type: 'number' },
+    { name: 'agentCity', type: 'string' },
+    { name: 'agentCountry', type: 'string' },
+    { name: 'agentLatitude', type: 'number' },
+    { name: 'agentLongitude', type: 'number' },
+    { name: 'agentRegion', type: 'string' },
+    { name: 'date_stamp', type: 'string' },
+    { name: 'latencyMs', type: 'number' },
+    { name: 'multiaddr', type: 'string' },
+    { name: 'provider', type: 'string' },
+    { name: 'testId', type: 'string' },
+  ],
+  // lassie_bedrock
+  'lassie': [
+    { name: '_id', type: 'string' },
+    { name: 'bandwidth_bytes_sec', type: 'number' },
+    { name: 'date_stamp', type: 'string' },
+    { name: 'end_time', type: 'string' },
+    { name: 'instance_id', type: 'string' },
+    { name: 'provider', type: 'string' },
+    { name: 'retrieval_id', type: 'string' },
+    { name: 'start_time', type: 'string' },
+    { name: 'storage_provider_id', type: 'string' },
+    { name: 'success', type: 'boolean' },
+    { name: 'time_to_first_byte_ms', type: 'number' },
+  ],
+  // protocol_labs_retrieval_bot
+  'retrievalbot_1': [
+    { name: '_id', type: 'string' },
+    { name: 'avg_speed_bps', type: 'number' },
+    { name: 'avg_ttfb_ms', type: 'number' },
+    { name: 'bitswap_retrieval_success', type: 'number' },
+    { name: 'bitswap_retrievals', type: 'number' },
+    { name: 'date_stamp', type: 'string' },
+    { name: 'graphsync_retrieval_success', type: 'number' },
+    { name: 'graphsync_retrievals', type: 'number' },
+    { name: 'http_retrieval_success', type: 'number' },
+    { name: 'http_retrievals', type: 'number' },
+    { name: 'provider_id', type: 'string' },
+  ],
+  // filecoin_foundation_retrieval_bot
+  'retrievalbot_2': [
+    { name: '_id', type: 'string' },
+    { name: 'avg_speed_bps', type: 'number' },
+    { name: 'avg_ttfb_ms', type: 'number' },
+    { name: 'bitswap_retrieval_success', type: 'number' },
+    { name: 'bitswap_retrievals', type: 'number' },
+    { name: 'date_stamp', type: 'string' },
+    { name: 'graphsync_retrieval_success', type: 'number' },
+    { name: 'graphsync_retrievals', type: 'number' },
+    { name: 'http_retrieval_success', type: 'number' },
+    { name: 'http_retrievals', type: 'number' },
+    { name: 'provider_id', type: 'string' },
+  ],
+  // slingshot_retrievalbot
+  'retrievalbot_3': [
+    { name: '_id', type: 'string' },
+    { name: 'avg_speed_bps', type: 'number' },
+    { name: 'avg_ttfb_ms', type: 'number' },
+    { name: 'bitswap_retrieval_success', type: 'number' },
+    { name: 'bitswap_retrievals', type: 'number' },
+    { name: 'date_stamp', type: 'string' },
+    { name: 'graphsync_retrieval_success', type: 'number' },
+    { name: 'graphsync_retrievals', type: 'number' },
+    { name: 'http_retrieval_success', type: 'number' },
+    { name: 'http_retrievals', type: 'number' },
+    { name: 'provider_id', type: 'string' },
+  ],
+  'starboard': [
+    { name: '_id', type: 'string' },
+    { name: 'balance', type: 'number' },
+    { name: 'base_tx_fee', type: 'string' },
+    { name: 'batch_fee', type: 'string' },
+    { name: 'blocks_mined', type: 'number' },
+    { name: 'date_stamp', type: 'string' },
+    { name: 'fee_debt', type: 'number' },
+    { name: 'initial_pledge', type: 'number' },
+    { name: 'locked_funds', type: 'number' },
+    { name: 'miner_tip', type: 'string' },
+    { name: 'onboarding_at', type: 'string' },
+    { name: 'over_estimation_burn', type: 'string' },
+    { name: 'pre_commit_deposits', type: 'number' },
+    { name: 'provider_collateral', type: 'number' },
+    { name: 'provider_id', type: 'string' },
+    { name: 'rewards', type: 'number' },
+    { name: 'sector_size', type: 'number' },
+    { name: 'stat_date', type: 'string' },
+    { name: 'win_count', type: 'number' },
+    { name: 'windowpost_gas_fee', type: 'string' },
+  ],
 }
