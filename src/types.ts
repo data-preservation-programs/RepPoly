@@ -7,7 +7,7 @@ export interface Collection {
 }
 
 export type CollectionName = 'filfox' | 'filrep' | 'filscan' | 'gravity_assist_retrieval_bot' | 'ground_control_sp_location'
-    | 'lassie_bedrock' | 'protocol_labs_retrieval_bot' | 'filecoin_foundation_retrieval_bot' | 'slingshot_retrievalbot'
+    | 'lassie_bedrock' | 'protocol_labs_retrieval_bot' | 'filecoin_foundation_retrieval_bot' | 'slingshot_retrieval_bot'
     | 'starboard'
 
 export const CollectionNames: CollectionName[] = [
@@ -19,7 +19,7 @@ export const CollectionNames: CollectionName[] = [
     'lassie_bedrock',
     'protocol_labs_retrieval_bot',
     'filecoin_foundation_retrieval_bot',
-    'slingshot_retrievalbot',
+    'slingshot_retrieval_bot',
     'starboard',
 ]
 
@@ -46,13 +46,13 @@ export const collections: Collection[] = [
         polybase: 'filscan',
         provider: 'actor',
     },
-    /*
-    {
-        repdao: 'gravity_assist',
-        polybase: 'gravity_assist_retrieval_bot',
-        provider: 'provider_id',
-    },
-    */
+    // /*
+    // {
+    //     repdao: 'gravity_assist',
+    //     polybase: 'gravity_assist_retrieval_bot',
+    //     provider: 'provider_id',
+    // },
+    // */
     {
         repdao: 'kentiks',
         polybase: 'ground_control_sp_location',
@@ -61,7 +61,7 @@ export const collections: Collection[] = [
     {
         repdao: 'lassie',
         polybase: 'lassie_bedrock',
-        provider: 'storage_provider_id',
+        provider: 'sp_id',
     },
     {
         repdao: 'retrievalbot_1',
@@ -75,7 +75,7 @@ export const collections: Collection[] = [
     },
     {
         repdao: 'retrievalbot_3',
-        polybase: 'slingshot_retrievalbot',
+        polybase: 'slingshot_retrieval_bot',
         provider: 'provider_id',
     },
     {

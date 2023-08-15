@@ -3,7 +3,7 @@ export interface filscan {
   id: string;
   active_sector_count: number;
   balance: string;
-  ds: string;
+  date_stamp: string;
   epoch: number;
   fault_sector_count: number;
   live_sector_count: number;

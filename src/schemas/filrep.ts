@@ -2,6 +2,7 @@
 export interface filrep {
   id: string;
   __v: number;
+  date_stamp: string;
   price: string;
   provider: string;
   rank: number;
