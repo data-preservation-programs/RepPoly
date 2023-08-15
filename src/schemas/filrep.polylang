@@ -2,15 +2,17 @@
 collection filrep {
   id: string;
   __v: number;
+  date_stamp: string;
   price: string;
   provider: string;
   rank: number;
   reachability: string;
   recentDeals: number;
   verifiedPrice: string;
-  constructor (id: string, __v: number, price: string, provider: string, rank: number, reachability: string, recentDeals: number, verifiedPrice: string) {
+  constructor (id: string, __v: number, date_stamp:string, price: string, provider: string, rank: number, reachability: string, recentDeals: number, verifiedPrice: string) {
     this.id = id;
     this.__v = __v;
+    this.date_stamp = date_stamp;
     this.price = price;
     this.provider = provider;
     this.rank = rank;

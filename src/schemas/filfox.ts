@@ -2,7 +2,7 @@
 export interface filfox {
   id: string;
   blocksMined: number;
-  ds: string;
+  date_stamp: string;
   epoch: number;
   provider: string;
   qualityAdjPower: string;
