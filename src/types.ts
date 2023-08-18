@@ -23,7 +23,16 @@ export const CollectionNames: CollectionName[] = [
     'starboard',
     'stfil',
 ]
-export const DefaultNamespace = "pk/0x38d810a48aed860010ddd510ca9070b383490b3521972cdbd296d373dcd7183c8a885e1a2fd6fb2805216398a0ac5cf11a40ed452c3e4f893ca3ca794da3fbbf"
+<<<<<<< dest:   f8b56cf77e36 - 139834872+stephen-pl: Adding stfil
+
+export const DefaultNamespace = "pk/0x2d29bcb418989c5677641586d48fe51a5220875a0d82357bb9750c757c27cc73b2482666f4941bff3bc53c1d9b696dcab19351a5ac5c095f61e3d1f8ba91b90a"
+||||||| base
+
+export const DefaultNamespace = 'pk/0x38d810a48aed860010ddd510ca9070b383490b3521972cdbd296d373dcd7183c8a885e1a2fd6fb2805216398a0ac5cf11a40ed452c3e4f893ca3ca794da3fbbf'
+=======
+//new Polybase({ defaultNamespace: "pk/0x2d29bcb418989c5677641586d48fe51a5220875a0d82357bb9750c757c27cc73b2482666f4941bff3bc53c1d9b696dcab19351a5ac5c095f61e3d1f8ba91b90a" });
+export const DefaultNamespace = "pk/0x2d29bcb418989c5677641586d48fe51a5220875a0d82357bb9750c757c27cc73b2482666f4941bff3bc53c1d9b696dcab19351a5ac5c095f61e3d1f8ba91b90a"
+>>>>>>> source: 800d34c1c342 - 139834872+stephen-pl: Updating to use collecti...
 
 export const DB = new Polybase({
     defaultNamespace: DefaultNamespace,
