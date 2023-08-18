@@ -44,16 +44,6 @@ try {
                         f.name = 'provider'
                     }
                 })
-
-                fields.sort(function(a: Field, b: Field) {
-                    if (a.name == '_id') {
-                        return 1;
-                    }
-                    if (b.name == '_id') {
-                        return 1;
-                    }
-                    return a.name.localeCompare(b.name);
-                  });
  
                 const values = fields.map((field: Field) => {
                     if (field.name == 'date_stamp') {
@@ -72,6 +62,9 @@ try {
                         }
                         else if (polybase == 'starboard') {
                             return doc['onboarding_at'].substring(0, 10)
+                        }
+                        else {
+                            return doc['date_stamp']
                         }
                     }
                     else {

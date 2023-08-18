@@ -17,7 +17,6 @@ export interface Field {
 `)
 argExports.push('export const argFields: {[key:string]: Field[]} = {')
 for (const {repdao, polybase, provider} of collections) {
-    if (polybase == 'filrep') {continue}
     const doc = await client.db('reputation').collection(repdao).findOne({}, {sort:{$natural:-1}})
     if (doc === null) {
         console.error(`No doc found for ${repdao}`)

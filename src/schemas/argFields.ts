@@ -138,4 +138,18 @@ export const argFields: { [key: string]: Field[] } = {
     { name: 'win_count', type: 'number' },
     { name: 'windowpost_gas_fee', type: 'string' },
   ],
+  'stfil': [
+    { name: '_id', type: 'string' },
+    { name: 'date_stamp', type: 'string' },
+    { name: 'debt', type: 'string' },
+    { name: 'debt_ratio', type: 'string' },
+    { name: 'delegated_role', type: 'string' },
+    { name: 'equity', type: 'string' },
+    { name: 'liquidation_threshold', type: 'number' },
+    { name: 'max_leverage', type: 'number' },
+    { name: 'miner', type: 'string' },
+    { name: 'position', type: 'string' },
+    { name: 'stable_debt', type: 'string' },
+    { name: 'variable_debt', type: 'string' },
+  ],
 }
