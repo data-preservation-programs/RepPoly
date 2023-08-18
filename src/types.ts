@@ -22,8 +22,8 @@ export const CollectionNames: CollectionName[] = [
     'slingshot_retrieval_bot',
     'starboard',
 ]
-
-export const DefaultNamespace = 'pk/0x38d810a48aed860010ddd510ca9070b383490b3521972cdbd296d373dcd7183c8a885e1a2fd6fb2805216398a0ac5cf11a40ed452c3e4f893ca3ca794da3fbbf'
+//new Polybase({ defaultNamespace: "pk/0x2d29bcb418989c5677641586d48fe51a5220875a0d82357bb9750c757c27cc73b2482666f4941bff3bc53c1d9b696dcab19351a5ac5c095f61e3d1f8ba91b90a" });
+export const DefaultNamespace = "pk/0x2d29bcb418989c5677641586d48fe51a5220875a0d82357bb9750c757c27cc73b2482666f4941bff3bc53c1d9b696dcab19351a5ac5c095f61e3d1f8ba91b90a"
 
 export const DB = new Polybase({
     defaultNamespace: DefaultNamespace,
