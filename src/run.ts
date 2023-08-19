@@ -73,6 +73,9 @@ try {
                         else if (polybase == 'starboard') {
                             return doc['onboarding_at'].substring(0, 10)
                         }
+                        else {
+                            return doc['date_stamp']
+                        }
                     }
                     else {
                         const value = doc[field.name === 'provider' ? provider : field.name]
