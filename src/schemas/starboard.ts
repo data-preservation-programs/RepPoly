@@ -13,8 +13,8 @@ export interface starboard {
   onboarding_at: string;
   over_estimation_burn: string;
   pre_commit_deposits: number;
-  provider: string;
   provider_collateral: number;
+  provider: string;
   rewards: number;
   sector_size: number;
   stat_date: string;

@@ -13,14 +13,14 @@ collection starboard {
   onboarding_at: string;
   over_estimation_burn: string;
   pre_commit_deposits: number;
-  provider: string;
   provider_collateral: number;
+  provider: string;
   rewards: number;
   sector_size: number;
   stat_date: string;
   win_count: number;
   windowpost_gas_fee: string;
-  constructor (id: string, balance: number, base_tx_fee: string, batch_fee: string, blocks_mined: number, date_stamp: string, fee_debt: number, initial_pledge: number, locked_funds: number, miner_tip: string, onboarding_at: string, over_estimation_burn: string, pre_commit_deposits: number, provider: string, provider_collateral: number, rewards: number, sector_size: number, stat_date: string, win_count: number, windowpost_gas_fee: string) {
+  constructor (id: string, balance: number, base_tx_fee: string, batch_fee: string, blocks_mined: number, date_stamp: string, fee_debt: number, initial_pledge: number, locked_funds: number, miner_tip: string, onboarding_at: string, over_estimation_burn: string, pre_commit_deposits: number, provider_collateral: number, provider: string, rewards: number, sector_size: number, stat_date: string, win_count: number, windowpost_gas_fee: string) {
     this.id = id;
     this.balance = balance;
     this.base_tx_fee = base_tx_fee;
@@ -34,8 +34,8 @@ collection starboard {
     this.onboarding_at = onboarding_at;
     this.over_estimation_burn = over_estimation_burn;
     this.pre_commit_deposits = pre_commit_deposits;
-    this.provider = provider;
     this.provider_collateral = provider_collateral;
+    this.provider = provider;
     this.rewards = rewards;
     this.sector_size = sector_size;
     this.stat_date = stat_date;
