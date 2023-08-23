@@ -1,11 +1,12 @@
 // Auto-generated, do not modify
 export interface filrep {
   id: string;
-  provider: string;
-  reachability: string;
-  price: string;
-  verifiedPrice: string;
-  recentDeals: number;
-  rank: number;
   __v: number;
+  date_stamp: string;
+  price: string;
+  provider: string;
+  rank: number;
+  reachability: string;
+  recentDeals: number;
+  verifiedPrice: string;
 }
