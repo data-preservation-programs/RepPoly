@@ -4,7 +4,7 @@ import 'dotenv/config'
 import {MongoClient, ObjectId} from "mongodb";
 import PQueue from 'p-queue';
 import pRetry from 'p-retry';
-import {argFields} from "./schemas/argFields.js";
+import {Field, argFields} from "./schemas/argFields.js";
 import {collections} from "./types.js";
 
 const polydb = new Polybase({
@@ -22,7 +22,8 @@ const mongo = new MongoClient(process.env.MONGO_URI!)
 const queue = new PQueue({concurrency: 64})
 
 try {
-    for (const {repdao, polybase} of collections) {
+    for (const {repdao, polybase, provider, dateFunc} of collections) {
+
         const polyCol = polydb.collection(polybase)
         const mongoCol = mongo.db('reputation').collection(repdao)
         const last = await polyCol.sort('id', 'desc').limit(1).get()
@@ -33,34 +34,74 @@ try {
             match._id = {
                 $gt: new ObjectId(lastId)
             }
-        }
+        }  
         for await (const doc of mongoCol.find(match).sort('_id', 'asc')) {
             queue.add(() => {
                 console.log(`Creating ${polybase} record for`, doc._id.toString())
-                const fields = argFields[repdao]
-                const values = fields.map((field) => {
-                    const value = doc[field.name]
-                    if (value instanceof ObjectId) {
-                        return value.toString()
+                var fields = argFields[repdao];
+                fields.forEach(function(f: Field) {
+                    if (f.name === provider) {
+                        f.name = 'provider'
                     }
-                    if (value == null) {
-                        switch (field.type) {
-                            case 'string':
-                                return ''
-                            case 'number':
-                                return 0
-                            case 'boolean':
-                                return false
-                            default:
-                                throw new Error(`Unknown type ${field.type}`)
+                })
+<<<<<<< dest:   7fe9de19511a - 139834872+stephen-pl: Updating to use collecti...
+
+||||||| base
+
+                fields.sort(function(a: Field, b: Field) {
+                    if (a.name == '_id') {
+                        return 1;
+                    }
+                    if (b.name == '_id') {
+                        return 1;
+                    }
+                    return a.name.localeCompare(b.name);
+                  });
+ 
+=======
+ 
+>>>>>>> source: 45d0c3cc578f - 139834872+stephen-pl: Removing field sort logi...
+                const values = fields.map((field: Field) => {
+                    if (field.name == 'date_stamp') {
+                        return dateFunc(doc)
+                    }
+                    else {
+                        const value = doc[field.name === 'provider' ? provider : field.name]
+
+                        if (value === undefined) {
+                            return undefined
                         }
+                        if (value instanceof ObjectId) {
+                            return value.toString()
+                        }
+                        if (value == null) {
+                            switch (field.type) {
+                                case 'string':
+                                    return ''
+                                case 'number':
+                                    return 0
+                                case 'boolean':
+                                    return false
+                                default:
+                                    throw new Error(`Unknown type ${field.type}`)
+                            }
+                        }
+                        return value
                     }
-                    return value
                 })
                 return pRetry(async () => {
                     try {
-                        await polyCol.create(values)
+                        if (!values.includes(undefined)) {
+                            console.log(`Creating row in ${polybase} polybase...`)
+                            await polyCol.create(values)
+                        }
+                        else {
+                            console.log(`Did not create record for ${doc._id.toString()}. Values ${values.join()}`)
+                        }
                     } catch (e : any) {
+                        console.log(e.toString() + ' in ' + polybase)
+                        fields.forEach(function(f: Field) {console.log(f.name + " " + f.type)})
+                        console.log(values.join(', '));
                         if (e instanceof PolybaseError && e.code === 'already-exists') {
                             return
                         }

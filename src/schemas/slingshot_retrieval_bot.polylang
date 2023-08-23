@@ -1,5 +1,5 @@
 @read
-collection filecoin_foundation_retrieval_bot {
+collection slingshot_retrieval_bot {
   id: string;
   avg_speed_bps: number;
   avg_ttfb_ms: number;
