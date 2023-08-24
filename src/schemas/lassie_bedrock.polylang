@@ -1,23 +1,34 @@
 @read
 collection lassie_bedrock {
   id: string;
-  retrieval_id: string;
+  bandwidth_bytes_sec: number;
+  date_stamp: string;
+  end_time: string;
   instance_id: string;
   provider: string;
-  time_to_first_byte_ms: number;
-  bandwidth_bytes_sec: number;
-  success: boolean;
+  retrieval_id: string;
   start_time: string;
-  end_time: string;
-  constructor (id: string, retrieval_id: string, instance_id: string, provider: string, time_to_first_byte_ms: number, bandwidth_bytes_sec: number, success: boolean, start_time: string, end_time: string) {
+  success: boolean;
+  time_to_first_byte_ms: number;
+  constructor (id: string, bandwidth_bytes_sec: number, date_stamp: string, end_time: string, instance_id: string, provider: string, retrieval_id: string, start_time: string, storage_provider_id: string, success: boolean, time_to_first_byte_ms: number) {
     this.id = id;
-    this.retrieval_id = retrieval_id;
+    this.bandwidth_bytes_sec = bandwidth_bytes_sec;
+    this.date_stamp = date_stamp;
+    this.end_time = end_time;
     this.instance_id = instance_id;
     this.provider = provider;
-    this.time_to_first_byte_ms = time_to_first_byte_ms;
-    this.bandwidth_bytes_sec = bandwidth_bytes_sec;
-    this.success = success;
+    this.retrieval_id = retrieval_id;
     this.start_time = start_time;
-    this.end_time = end_time;
+    this.storage_provider_id = storage_provider_id;
+    this.success = success;
+    this.time_to_first_byte_ms = time_to_first_byte_ms;
+  }
+
+  del () {
+    if (owner != ctx.auth) {
+      throw error();
+    }
+
+    selfdestruct();
   }
 }

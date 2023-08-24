@@ -70,16 +70,19 @@ PUBLIC_KEY=<PUBLIC_KEY>
 MONGO_URI=<MONGO_URI>
 ```
 
+:warning: This is helpful to create schemas files but there are cases where the latest row may have null 
+values and that will cause this script to fail. Going forward manual schema updates should be preferred 
+and this script should be considered deprecated.
+
+```
+ts-node --esm src/gen.ts
+```
+
 To create schemas files and run the code gen run
 
 ```
 ts-node --esm src/create_schema.ts
-```
 
-To create/update and generate schemas and run the code gen run
-
-```
-ts-node --esm src/gen.ts
 ```
 
 To pull data from mongo and push to polybase run 

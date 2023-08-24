@@ -1,0 +1,37 @@
+@read
+collection stfil {
+  id: string;
+  date_stamp: string;
+  debt: string;
+  debt_ratio: string;
+  delegated_role: string;
+  equity: string;
+  liquidation_threshold: number;
+  max_leverage: number;
+  position: string;
+  provider: string;
+  stable_debt: string;
+  variable_debt: string;
+  constructor (id: string, date_stamp: string, debt: string, debt_ratio: string, delegated_role: string, equity: string, liquidation_threshold: number, max_leverage: number, position: string, provider: string, stable_debt: string, variable_debt: string) {
+    this.id = id;
+    this.date_stamp = date_stamp;
+    this.debt = debt;
+    this.debt_ratio = debt_ratio;
+    this.delegated_role = delegated_role;
+    this.equity = equity;
+    this.liquidation_threshold = liquidation_threshold;
+    this.max_leverage = max_leverage;
+    this.position = position;
+    this.provider = provider;
+    this.stable_debt = stable_debt;
+    this.variable_debt = variable_debt;
+  }
+
+  del () {
+    if (owner != ctx.auth) {
+      throw error();
+    }
+
+    selfdestruct();
+  }
+}
