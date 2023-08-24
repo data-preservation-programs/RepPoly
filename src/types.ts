@@ -10,17 +10,18 @@ export interface Collection {
 
  export type CollectionName = 'filfox' | 'filrep' | 'filscan' | 'gravity_assist_retrieval_bot' | 'ground_control_sp_location'
      | 'lassie_bedrock' | 'protocol_labs_retrieval_bot' | 'filecoin_foundation_retrieval_bot' | 'slingshot_retrieval_bot'
-     | 'starboard' | 'stfil'
+     | 'starboard' | 'stfil' | 'new_web_group_retrieval_bot' | 'gravity_assist_retrieval_bot'
 
 export const CollectionNames: CollectionName[] = [
+    'filecoin_foundation_retrieval_bot',
     'filfox',
     'filrep',
     'filscan',
-    //'gravity_assist_retrieval_bot',
+    'gravity_assist_retrieval_bot',
     'ground_control_sp_location',
     'lassie_bedrock',
+    'new_web_group_retrieval_bot',
     'protocol_labs_retrieval_bot',
-    'filecoin_foundation_retrieval_bot',
     'slingshot_retrieval_bot',
     'starboard',
     'stfil',
@@ -53,13 +54,6 @@ export const collections: Collection[] = [
         provider: 'actor',
         dateFunc: (doc) => epochToDate(doc['epoch'])
     },
-    /*
-    {
-        repdao: 'gravity_assist',
-        polybase: 'gravity_assist_retrieval_bot',
-        provider: 'provider_id',
-    },
-    */
     {
         repdao: 'kentiks',
         polybase: 'ground_control_sp_location',
@@ -88,6 +82,18 @@ export const collections: Collection[] = [
     {
         repdao: 'retrievalbot_3',
         polybase: 'slingshot_retrieval_bot',
+        provider: 'provider_id',
+        dateFunc: (doc) => doc['date'],
+    },
+    {
+        repdao: 'retrievalbot_4',
+        polybase: 'new_web_group_retrieval_bot',
+        provider: 'provider_id',
+        dateFunc: (doc) => doc['date'],
+    },
+    {
+        repdao: 'retrievalbot_5',
+        polybase: 'gravity_assist_retrieval_bot',
         provider: 'provider_id',
         dateFunc: (doc) => doc['date'],
     },
