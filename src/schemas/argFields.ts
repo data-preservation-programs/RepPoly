@@ -10,6 +10,30 @@ export interface Field {
 }
 
 export const argFields: { [key: string]: Field[] } = {
+  'cid_checker_bot_geo': [
+    { name:'_id', type: 'string' },
+    { name:'created_at', type: 'string' },
+    { name:'geolite2_city', type: 'string' },
+    { name:'geolite2_country', type: 'string' },
+    { name:'geolite2_latitude', type: 'string' },
+    { name:'geolite2_longitude', type: 'string' },
+    { name:'geolite2_metro', type: 'string' },
+    { name:'geolite2_region', type: 'string' },
+    { name:'geolite2_timezone', type: 'string' },
+    {name: 'geolite2_radius', type: 'string' },
+    { name:'ipinfo_city', type: 'string' },
+    { name:'ipinfo_country', type: 'string' },
+    { name:'ipinfo_hostname', type: 'string' },
+    { name:'ipinfo_latitude', type: 'string' },
+    { name:'ipinfo_longitude', type: 'string' },
+    { name:'ipinfo_org', type: 'string' },
+    { name:'ipinfo_postal', type: 'string' },
+    { name:'ipinfo_region', type: 'string' },
+    { name:'ipinfo_timezone', type: 'string' },
+    { name:'provider', type: 'string' },
+    { name:'quality_adj_power', type: 'number' },
+    { name:'raw_byte_power', type: 'number' },
+  ],
   'Filfox': [
     { name: '_id', type: 'string' },
     { name: 'blocksMined', type: 'number' },
