@@ -73,7 +73,7 @@ export const collections: Collection[] = [
         repdao: 'lassie',
         polybase: 'lassie_bedrock',
         provider: 'sp_id',
-        dateFunc: (doc) => doc['date']?.toISOString().substring(0, 10),
+        dateFunc: (doc) => doc['start_time']?.toISOString().substring(0, 10),
     },
     {
         repdao: 'retrievalbot_1',
