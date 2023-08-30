@@ -2,6 +2,7 @@
 collection cid_checker_bot_geo {
   id: string;
   created_at: string;
+  date_stamp: string;
   geolite2_city: string;
   geolite2_country: string;
   geolite2_latitude: string;
@@ -25,6 +26,7 @@ collection cid_checker_bot_geo {
 
   constructor ( id: string,
                 created_at: string,
+                date_stamp: string,
                 geolite2_city: string,
                 geolite2_country: string,
                 geolite2_latitude: string,
@@ -47,6 +49,7 @@ collection cid_checker_bot_geo {
                 raw_byte_power: number) {
     this.id = id;
     this.created_at = created_at;
+    this.date_stamp = date_stamp;
     this.geolite2_city = geolite2_city;
     this.geolite2_country = geolite2_country;
     this.geolite2_latitude = geolite2_latitude;

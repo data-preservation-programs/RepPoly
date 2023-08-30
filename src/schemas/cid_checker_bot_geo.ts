@@ -2,6 +2,7 @@
 export interface cid_checker_bot_geo {
   id: string;
   created_at: string;
+  date_stamp: string;
   geolite2_city: string;
   geolite2_country: string;
   geolite2_latitude: string;
