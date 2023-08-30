@@ -1,0 +1,79 @@
+@read
+collection cid_checker_bot_geo {
+  id: string;
+  created_at: string;
+  geolite2_city: string;
+  geolite2_country: string;
+  geolite2_latitude: string;
+  geolite2_longitude: string;
+  geolite2_metro: string;
+  geolite2_radius: string;
+  geolite2_region: string;
+  geolite2_timezone: string;
+  ipinfo_city: string;
+  ipinfo_country: string;
+  ipinfo_hostname: string;
+  ipinfo_latitude: string;
+  ipinfo_longitude: string;
+  ipinfo_org: string;
+  ipinfo_postal: string;
+  ipinfo_region: string;
+  ipinfo_timezone: string;
+  provider: string;
+  quality_adj_power: number;
+  raw_byte_power: number;
+
+  constructor ( id: string,
+                created_at: string,
+                geolite2_city: string,
+                geolite2_country: string,
+                geolite2_latitude: string,
+                geolite2_longitude: string,
+                geolite2_metro: string,
+                geolite2_radius: string,
+                geolite2_region: string,
+                geolite2_timezone: string,
+                ipinfo_city: string,
+                ipinfo_country: string,
+                ipinfo_hostname: string,
+                ipinfo_latitude: string,
+                ipinfo_longitude: string,
+                ipinfo_org: string,
+                ipinfo_postal: string,
+                ipinfo_region: string,
+                ipinfo_timezone: string,
+                provider: string,
+                quality_adj_power: number,
+                raw_byte_power: number) {
+    this.id = id;
+    this.created_at = created_at;
+    this.geolite2_city = geolite2_city;
+    this.geolite2_country = geolite2_country;
+    this.geolite2_latitude = geolite2_latitude;
+    this.geolite2_longitude = geolite2_longitude;
+    this.geolite2_metro = geolite2_metro;
+    this.geolite2_radius = geolite2_radius;
+    this.geolite2_region = geolite2_region;
+    this.geolite2_timezone = geolite2_timezone;
+    this.ipinfo_city = ipinfo_city;
+    this.ipinfo_country = ipinfo_country;
+    this.ipinfo_hostname = ipinfo_hostname;
+    this.ipinfo_latitude = ipinfo_latitude;
+    this.ipinfo_longitude = ipinfo_longitude;
+    this.ipinfo_org = ipinfo_org;
+    this.ipinfo_postal = ipinfo_postal;
+    this.ipinfo_region = ipinfo_region;
+    this.ipinfo_timezone = ipinfo_timezone;
+    this.provider = provider;
+    this.quality_adj_power = quality_adj_power;
+    this.raw_byte_power = raw_byte_power;
+  }
+
+  del () {
+    if (owner != ctx.auth) {
+      throw error();
+    }
+
+    selfdestruct();
+  }
+}

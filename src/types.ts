@@ -10,9 +10,10 @@ export interface Collection {
 
  export type CollectionName = 'filfox' | 'filrep' | 'filscan' | 'gravity_assist_retrieval_bot' | 'ground_control_sp_location'
      | 'lassie_bedrock' | 'protocol_labs_retrieval_bot' | 'filecoin_foundation_retrieval_bot' | 'slingshot_retrieval_bot'
-     | 'starboard' | 'stfil' | 'new_web_group_retrieval_bot' | 'gravity_assist_retrieval_bot'
+     | 'starboard' | 'stfil' | 'new_web_group_retrieval_bot' | 'gravity_assist_retrieval_bot' | 'cid_checker_bot_geo'
 
 export const CollectionNames: CollectionName[] = [
+    'cid_checker_bot_geo',
     'filecoin_foundation_retrieval_bot',
     'filfox',
     'filrep',
@@ -35,6 +36,13 @@ export const DB = new Polybase({
 })
 
 export const collections: Collection[] = [
+    {
+        repdao: 'cid_checker_bot_geo',
+        polybase: 'cid_checker_bot_geo',
+        provider: 'miner_id',
+        dateFunc: (doc) => epochToDate(doc['created_at'])
+        
+    },
     {
         repdao: 'Filfox',
         polybase: 'filfox',

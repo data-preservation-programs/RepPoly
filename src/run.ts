@@ -1,7 +1,7 @@
 import {Polybase, PolybaseError} from '@polybase/client'
 import {ethPersonalSign} from '@polybase/eth'
 import 'dotenv/config'
-import {MongoClient, ObjectId} from "mongodb";
+import {Long, MongoClient, ObjectId} from "mongodb";
 import PQueue from 'p-queue';
 import pRetry from 'p-retry';
 import {Field, argFields} from "./schemas/argFields.js";
@@ -55,6 +55,9 @@ try {
                         }
                         if (value instanceof ObjectId) {
                             return value.toString()
+                        }
+                        if (value instanceof Long) {
+                            return value.toNumber()
                         }
                         if (value == null) {
                             switch (field.type) {
