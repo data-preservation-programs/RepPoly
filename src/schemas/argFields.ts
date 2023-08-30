@@ -13,6 +13,7 @@ export const argFields: { [key: string]: Field[] } = {
   'cid_checker_bot_geo': [
     { name:'_id', type: 'string' },
     { name:'created_at', type: 'string' },
+    { name: 'date_stamp', type: 'string' },
     { name:'geolite2_city', type: 'string' },
     { name:'geolite2_country', type: 'string' },
     { name:'geolite2_latitude', type: 'string' },
@@ -156,6 +157,19 @@ export const argFields: { [key: string]: Field[] } = {
   ],
   // gravity_assist_retrieval_bot
   'retrievalbot_5': [
+    { name: '_id', type: 'string' },
+    { name: 'avg_speed_bps', type: 'number' },
+    { name: 'avg_ttfb_ms', type: 'number' },
+    { name: 'bitswap_retrieval_success', type: 'number' },
+    { name: 'bitswap_retrievals', type: 'number' },
+    { name: 'date_stamp', type: 'string' },
+    { name: 'graphsync_retrieval_success', type: 'number' },
+    { name: 'graphsync_retrievals', type: 'number' },
+    { name: 'http_retrieval_success', type: 'number' },
+    { name: 'http_retrievals', type: 'number' },
+    { name: 'provider', type: 'string' },
+  ],
+  'retrievalbot_6': [
     { name: '_id', type: 'string' },
     { name: 'avg_speed_bps', type: 'number' },
     { name: 'avg_ttfb_ms', type: 'number' },
