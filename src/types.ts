@@ -34,7 +34,7 @@ export const DefaultNamespace = 'pk/0xf3e3d702ef1055c74e071ce744fe6449d4ddfaeaee
 
 export const DB = new Polybase({
     defaultNamespace: DefaultNamespace,
-    // baseURL: "https://mainnet.polybase.xyz/v0",
+    baseURL: "https://mainnet.polybase.xyz/v0",
 })
 
 export const collections: Collection[] = [
