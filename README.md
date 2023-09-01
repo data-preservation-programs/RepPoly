@@ -3,7 +3,7 @@
 This is a type definition package for Filecoin Reputation WG data stored in [Polybase](https://polybase.xyz/).
 
 ## Usage
-Start with installing the package
+Start with installing the package. Switching to mainnet was done in version 1.0.8.
 ```bash
 npm i @dataprograms/repdao-polybase
 ```
@@ -90,5 +90,3 @@ To pull data from mongo and push to polybase run
 ```
 ts-node --esm src/run.ts
 ```
-
-(uncomment baseURL if you want to push the changes to mainnet)
