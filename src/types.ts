@@ -7,10 +7,10 @@ export interface Collection {
     dateFunc: (doc: any) => string | undefined
 }
 
-export type CollectionName = 'filfox' | 'filrep' | 'filscan' | 'gravity_assist_retrieval_bot' 
+export type CollectionName = 'filfox' | 'filrep' | 'filscan' 
     | 'ground_control_sp_location'| 'lassie_bedrock' | 'protocol_labs_retrieval_bot' 
     | 'filecoin_foundation_retrieval_bot' | 'slingshot_retrieval_bot'| 'starboard' | 'stfil' 
-    | 'new_web_group_retrieval_bot' | 'gravity_assist_retrieval_bot' | 'cid_checker_bot_geo' 
+    | 'new_web_group_retrieval_bot' | 'glif_retrieval_bot' | 'gravity_assist_retrieval_bot' | 'cid_checker_bot_geo' 
     | 'triton_retrieval_bot'
 
 export const CollectionNames: CollectionName[] = [
@@ -19,6 +19,7 @@ export const CollectionNames: CollectionName[] = [
     'filfox',
     'filrep',
     'filscan',
+    'glif_retrieval_bot',
     'gravity_assist_retrieval_bot',
     'ground_control_sp_location',
     'lassie_bedrock',
@@ -102,6 +103,12 @@ export const collections: Collection[] = [
     {
         repdao: 'retrievalbot_5',
         polybase: 'gravity_assist_retrieval_bot',
+        provider: 'provider_id',
+        dateFunc: (doc) => doc['date'],
+    },
+    {
+        repdao: 'glif_retrieval_bot',
+        polybase: 'glif_retrieval_bot',
         provider: 'provider_id',
         dateFunc: (doc) => doc['date'],
     },
