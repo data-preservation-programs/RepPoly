@@ -1,5 +1,5 @@
 // Auto-generated, do not modify
-export interface slingshot_retrieval_bot {
+export interface glif_retrieval_bot {
   id: string;
   avg_speed_bps: number;
   avg_ttfb_ms: number;
