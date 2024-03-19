@@ -1,5 +1,8 @@
-## repdao-polybase
+## SP Reputation WG
+This repo serves the [SP Reputation WG](https://data-programs.gitbook.io/reputation/overview/what-is-sp-reputation-wg) where a number of reputation data collectors contribute SP reputation information to a shared database that downstream reputation service providers can consume. Check the link for how to use the SP Reputation WG database. 
 
+## repdao-polybase
+[
 This is a type definition package for Filecoin Reputation WG data stored in [Polybase](https://polybase.xyz/).
 
 ## Usage
@@ -7,7 +10,7 @@ Start with installing the package. Switching to mainnet was done in version 1.0.
 ```bash
 npm i @dataprograms/repdao-polybase
 ```
-
+](https://data-programs.gitbook.io/reputation/overview/what-is-sp-reputation-wg)
 Then import the types you need
 ```typescript
 import {DB, filfox} from "@dataprograms/repdao-polybase";
